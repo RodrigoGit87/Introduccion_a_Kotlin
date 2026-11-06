@@ -1,7 +1,9 @@
 package introduccion_Kotlin
 
-/*Una función es bloque de código con nombre que se puede llamar para realizar una tarea específica.
-Y puede ser llamada en el lugar que se necesite. Se usa la palabra reservada 'fun'*/
+/**
+ * Una función es bloque de código con nombre que se puede llamar para realizar una tarea específica.
+ * Y puede ser llamada en el lugar que se necesite. Se usa la palabra reservada 'fun'
+ */
 
 /*  fun nombre (parametro/s) {...}  */
 
@@ -75,7 +77,16 @@ val notas = mediaTresNotas
 //  println(notas(4.0,7.5,6.0))
 
 /**
- * =========
+ * FUNCIONES DE ORDEN SUPERIOR
+ */
+    val aCount=" una cadena media".count({c:Char -> c == 'a'})
+
+    //  - Omitir paréntesis de función y omitir tipo de parametro
+    val eCount= "develoop.com".count{ c -> c == 'e'}
+    //  - Reducción máxima de sintaxis, el identificador 'it' representa cada elemento de la lista
+    val iCount = "dividir".count{ it=='i'}
+/**
+ * ========= MAIN ==========
  */
 fun main () {
     println("fun model(1,0,5)= ${model(1, 0, 5)}") // fun model(1,0,5)= 28
@@ -113,9 +124,15 @@ fun main () {
     println(alternarMensaje) // Hola
                             //  Adiós
 
+    println("lambda aCount: $aCount") // lambda aCount: 4
+    println("lambda eCount: $eCount")   //lambda eCount: 2
+    println("lambda con identificador 'it': $iCount")   // lambda con identificador 'it': 3
+
     /**
      * EJECUCIÓN DIRECTA DE UNA LAMBDA
      */
     val resultado = { n1: Int, n2: Int -> n1 + n2 } (5,5)
     println("lambda directa resultado(5,5): $resultado") // lambda directa resultado(5,5): 10
+
+
 }
